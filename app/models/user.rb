@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one :profil, dependent: :destroy
   has_many :offers, inverse_of: :owner, dependent: :destroy
+  has_one :wishlist, dependent: :destroy
 end
