@@ -1,5 +1,7 @@
 # TheGoodCorner
 
+TheGoodCorner is a commercial adverts marketplace where users can post offers of stuff they sell.
+
 ### User stories (Well, kind of)
 
 As a visitor I can :
