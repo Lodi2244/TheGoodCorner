@@ -32,4 +32,3 @@ As a user I can :
 - Emails should be sent via Sendgrid
 - Emails should be delivered asynchronously via Sidekiq
 - An offer owner can be contacted ONLY via a contact form, this will send him an email with the informations to contact the buyer
-
