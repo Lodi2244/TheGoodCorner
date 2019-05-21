@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'mini_magick', '~> 4.9', '>= 4.9.3'
+gem 'image_processing', '~> 1.9'
 gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'rails-erd', '~> 1.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
