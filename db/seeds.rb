@@ -25,5 +25,5 @@ p "Creating 20 fake Offers"
 
 
 20.times do
-Offer.create!(title: Faker::Music::RockBand.name, description: Faker::Movies::BackToTheFuture.quote, price: Faker::Number.decimal(2), category_id: Category.all.sample, user_id: User.all.sample)
+Offer.create!(title: Faker::Music::RockBand.name, description: Faker::Movies::BackToTheFuture.quote, price: Faker::Number.decimal(2), category_id: rand(Category.first.id..Category.last.id).to_i, user_id: rand(User.first.id..User.last.id).to_i)
 end
