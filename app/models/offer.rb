@@ -8,7 +8,7 @@ class Offer < ApplicationRecord
 
   def self.text_search(query)
     if query.present?
-      where("title ilike :q or description ilike :q", q: "#{query}")
+      where("title ilike :q or description ilike :q", q: "%#{query}%")
     else
       all
     end
