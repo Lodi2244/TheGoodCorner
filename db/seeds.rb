@@ -20,12 +20,10 @@ p "Creating 3 fake Categories"
   Category.create!(name: Faker::Games::Pokemon.name )
 end
 
-# Offer.destroy_all
-# p "Creating 20 fake Offers"
+Offer.destroy_all
+p "Creating 20 fake Offers"
 
 
-# 20.times do
-#  o = Offer.create!(title: Faker::Music::RockBand.name, description: Faker::Movies::BackToTheFuture.quote, price: Faker::Number.decimal(2), category_id: Category.all.sample)
-#  o.update!(owner_id: 1)
-#  o.save
-# end
+20.times do
+Offer.create!(title: Faker::Music::RockBand.name, description: Faker::Movies::BackToTheFuture.quote, price: Faker::Number.decimal(2), category_id: Category.all.sample, user_id: User.all.sample)
+end
