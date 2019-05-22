@@ -1,0 +1,9 @@
+<h1>AdvancedSearches#new</h1>
+
+<%= form_for @search do |f| %>
+<%= f.label :category %>
+<%= f.collection_select :category, @categories, :id, :name, include_blank: true %>
+<%= f.label :published_on %>
+<%= f.datetime_select :published_on, include_seconds: true %>
+<%= submit_tag 'Search' %>
+<% end %>

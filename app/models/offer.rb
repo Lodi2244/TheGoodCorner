@@ -6,6 +6,11 @@ class Offer < ApplicationRecord
   has_many_attached :pictures
   accepts_nested_attributes_for :pictures_attachments, allow_destroy: true
 
+  scope :category, -> (category_id) { where category_id: category_id }
+  scope :published_on, -> (created_at) { where created_at: created_at }
+  scope :price, -> (price) { where price: price }
+
+
   def self.text_search(query)
     if query.present?
       where("title ilike :q or description ilike :q", q: "%#{query}%")

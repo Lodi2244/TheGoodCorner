@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   devise_for :users
   root 'offers#index'
   resources :offers
+  resources :advanced_searches
 end
