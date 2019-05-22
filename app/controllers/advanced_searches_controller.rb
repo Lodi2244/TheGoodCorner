@@ -13,10 +13,10 @@ class AdvancedSearchesController < ApplicationController
     @search = AdvancedSearch.find(params[:id])
     # @results = Offer.where(nil)
     @results = Offer.category(@search.category.to_i)
-    p "^" * 40
-    p @results = Offer.published_on(@search.published_on)
-    p "^" * 40
-    @results = Offer.price(@search.min_price)
+    # p "^" * 40
+    # p @results = Offer.published_on(@search.published_on)
+    # p "^" * 40
+    # @results = Offer.price(@search.min_price)
 
   end
 
