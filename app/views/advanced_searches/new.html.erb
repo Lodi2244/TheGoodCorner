@@ -4,6 +4,6 @@
 <%= f.label :category %>
 <%= f.collection_select :category, @categories, :id, :name, include_blank: true %>
 <%= f.label :published_on %>
-<%= f.datetime_select :published_on, include_seconds: true %>
+<%= f.date_select :published_on, order: [:month], include_blank: true  %>
 <%= submit_tag 'Search' %>
 <% end %>

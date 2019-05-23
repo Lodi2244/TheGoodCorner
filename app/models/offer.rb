@@ -7,7 +7,7 @@ class Offer < ApplicationRecord
   accepts_nested_attributes_for :pictures_attachments, allow_destroy: true
 
   scope :category, -> (category_id) { where category_id: category_id }
-  scope :published_on, -> (created_at) { where created_at: created_at }
+  scope :by_month, lambda  { |month| where("extract(month from created_at) = ?", month) }
   scope :price, -> (price) { where price: price }
 
 
