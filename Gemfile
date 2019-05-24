@@ -9,6 +9,7 @@ gem 'image_processing', '~> 1.9'
 gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'rails-erd', '~> 1.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails-ujs', '~> 0.1.0'
 gem 'rails', '~> 5.2.2', '>= 5.2.2.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'

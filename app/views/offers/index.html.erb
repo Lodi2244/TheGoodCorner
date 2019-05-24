@@ -1,37 +1,38 @@
 <% if user_signed_in? %>
-<%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+  <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
 <% else %>
-<%= link_to 'Sign up', new_user_registration_path %>
-<%= link_to 'Sign in', new_user_session_path %>
-<% end %> 
+  <%= link_to 'Sign up', new_user_registration_path %>
+  <%= link_to 'Sign in', new_user_session_path %>
+<% end %>
 
 <%= form_tag offers_path, method: :get do %>
 <%= text_field_tag :query, params[:query] %>
 <%= submit_tag 'Search' %>
 <% end %>
 
-<%= link_to 'Advanced Search', new_advanced_search_path %>
+<%= link_to 'Advanced Search', new_advanced_search_path %><br>
 
+<div id="offers-list">
+<h1>Offers</h1>
 <table>
-<thread>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Price</th>
-    <th>Published on</th>
-    <th>Category</th>
-  </tr>
-</thread>
-
-<tbody>
-  <tr>
-    <% @offers.each do |offer| %>
-      <td><%= offer.title %></td>
-      <td><%= offer.description %></td>
-      <td><%= offer.price %></td>
-      <td><%= offer.created_at %></td>
-      <td><%= offer.category.name %></td>
+  <thread>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Published on</th>
+      <th>Category</th>
+      <th>Id</th>
     </tr>
-  <% end %>
-</tbody>
+  </thread>
+
+  <tbody>
+    <div id="offers">
+      <%= render @offers %>
+    </div>
+  </tbody>
 </table>
+</div>
+<div id="new-offer">
+  <%= link_to 'New Offer', new_offer_path %>
+</div>

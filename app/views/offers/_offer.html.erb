@@ -1,0 +1,11 @@
+<tr>
+  <td><%= offer.title %></td>
+  <td><%= offer.description %></td>
+  <td><%= offer.price %></td>
+  <td><%= offer.created_at %></td>
+  <td><%= offer.category.name %></td>
+  <td><%= offer.id %></td>
+  <td><%= link_to 'Destroy', offer, :method=> :delete, id: offer.id, :class => 'btn btn-mini btn-danger', data: { confirm: 'Are you Sure?', remote: true } %></td>
+  <td><%= link_to 'Edit', edit_offer_path(offer), :method=> :put, id: offer.id, :class => 'btn btn-mini btn-success' %></td>
+  <td><%= link_to 'Show', offer, id: offer.id, :class => 'btn btn-mini btn-primary', remote: true %></td>
+</tr>
