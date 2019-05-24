@@ -4,7 +4,7 @@
 <%= f.label :category %>
 <%= f.collection_select :category, @categories, :id, :name, include_blank: true %>
 <%= f.label :published_on %>
-<%= f.date_select :published_on, default: Date.today - 7.days %>
+<%= f.select :published_on, [['Past week', Date.today - 7.days]]+[['Past month', Date.today - 30.days]], include_blank: true %>
 <%= f.label :price_range %>
 <%= f.number_field  :min_price, min: 0  %>
 <%= f.number_field  :max_price, max: 100  %>

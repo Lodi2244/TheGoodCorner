@@ -7,8 +7,7 @@ class Offer < ApplicationRecord
   accepts_nested_attributes_for :pictures_attachments, allow_destroy: true
 
   scope :category, -> (category_id) { where category_id: category_id }
-  scope :week_range, lambda  { |start_date, end_date| where("extract(day from created_at) between ? and ?", start_date, end_date) }
-  scope :month_range, lambda  { |start_date, end_date| where("extract(month from created_at) between ? and ?", start_date, end_date) }
+  scope :between, -> (start_date, end_date) { where created_at: start_date..end_date }
   scope :price, -> (price) { where price: price }
 
 
