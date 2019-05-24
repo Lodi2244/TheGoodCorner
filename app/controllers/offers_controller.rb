@@ -32,7 +32,7 @@ class OffersController < ApplicationController
     @offer.destroy
     respond_to do |format|
       format.js
-      format.html { redirect_to @offers }
+      format.html { redirect_to offers_path }
     end
   end
 
