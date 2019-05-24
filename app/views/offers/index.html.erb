@@ -1,0 +1,30 @@
+<%= form_tag offers_path, method: :get do %>
+<%= text_field_tag :query, params[:query] %>
+<%= submit_tag 'Search' %>
+<% end %>
+
+<%= link_to 'Advanced Search', new_advanced_search_path %>
+
+<table>
+<thread>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Published on</th>
+    <th>Category</th>
+  </tr>
+</thread>
+
+<tbody>
+  <tr>
+    <% @offers.each do |offer| %>
+      <td><%= offer.title %></td>
+      <td><%= offer.description %></td>
+      <td><%= offer.price %></td>
+      <td><%= offer.created_at %></td>
+      <td><%= offer.category.name %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>

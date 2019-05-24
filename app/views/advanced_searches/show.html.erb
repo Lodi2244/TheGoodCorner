@@ -1,0 +1,25 @@
+<h1>Search Results</h1>
+<table>
+  <thread>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Published on</th>
+      <th>Category</th>
+    </tr>
+  </thread>
+  <% if @results %>
+    <tbody>
+      <tr>
+        <% @results.each do |offer| %>
+          <td><%= offer.title %></td>
+          <td><%= offer.description %></td>
+          <td><%= offer.price %></td>
+          <td><%= offer.created_at %></td>
+          <td><%= offer.category.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

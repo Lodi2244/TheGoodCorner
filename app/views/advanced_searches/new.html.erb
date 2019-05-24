@@ -1,0 +1,12 @@
+<h1>AdvancedSearches#new</h1>
+
+<%= form_for @search do |f| %>
+<%= f.label :category %>
+<%= f.collection_select :category, @categories, :id, :name, include_blank: true %>
+<%= f.label :published_on %>
+<%= f.select :published_on, [['Past week', Date.today - 7.days]]+[['Past month', Date.today - 30.days]], include_blank: true %>
+<%= f.label :price_range %>
+<%= f.number_field  :min_price, min: 0  %>
+<%= f.number_field  :max_price, max: 100  %>
+<%= submit_tag 'Search' %>
+<% end %>
