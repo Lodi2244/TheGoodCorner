@@ -10,11 +10,14 @@ class AdvancedSearchesController < ApplicationController
   end
 
   def show
+    @default_date = Date.today
     @search = AdvancedSearch.find(params[:id])
     @results = Offer.where(nil)
     @results = @results.category(@search.category.to_i) if @search.category.present?
-    @results = @results.by_month(@search.published_on.month) if @search.published_on.present?
+    @results = @results.week_range(@search.published_on.day, @default_date.day) if @search.published_on.present?
+    @results = @results.month_range(@search.published_on.month, @default_date.month) if @search.published_on.present?
     @results = @results.price(@search.min_price..@search.max_price) if @search.min_price.present? && @search.max_price.present?
+
   end
 
   private

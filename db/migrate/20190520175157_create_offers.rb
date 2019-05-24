@@ -6,6 +6,7 @@ class CreateOffers < ActiveRecord::Migration[5.2]
       t.float :price
       t.references :category, foreign_key: true
 
+
       t.timestamps
     end
   end
