@@ -1,0 +1,54 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white">
+  <a class="navbar-brand" href="#">TheGoodCorner</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">
+          <i class="fas fa-search"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <span>
+            <form class="form-inline">
+              <div class="form-group mb-2">
+                <label for="staticEmail2" class="sr-only">Search</label>
+                <input type="text" readonly="readonly" class="form-control-plaintext" id="staticEmail2" value="Search">
+              </div>
+            </form>
+          </span>
+        </a>
+      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <a href="">
+            <i class="fas fa-power-off" style="color: black;"></i>
+            <span><%= link_to 'Log out', destroy_user_session_path, method: :delete, class:"nav-link" %></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="">
+            <i class="fas fa-user" style="color: black;"></i>
+            <span><%= link_to 'Profil', users_show_path, method: :get, class:"nav-link" %></span>
+          </a>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <a href="">
+            <i class="fas fa-user-plus" style="color: black;"></i>
+            <span><%= link_to 'Sign up', new_user_registration_path, class:"nav-link" %><span>
+          </a>
+          <li >
+            <a href="">
+              <i class="fas fa-lock" style="color: black;"></i>
+              <span><%= link_to 'Sign in', new_user_session_path, class:"nav-link" %><span>
+              </a>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </nav>
